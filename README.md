@@ -1,6 +1,6 @@
 #rpc
 本rpc为本人学习项目，设计架构图如下所示（点击可打开链接）：
-[![设计架构图]](https://github.com/mikeniubi2019/rpc/blob/master/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6.png "设计架构图")
+[![设计架构图](https://github.com/mikeniubi2019/rpc/blob/master/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6.png "设计架构图")](https://github.com/mikeniubi2019/rpc/blob/master/img/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6.png "设计架构图")
 #### # 项目亮点：
 1，独立实现了一个简单的容器管理，读取配置文件，扫描注解配置的类，反射生成代理类，自动完成依赖注入。
 
