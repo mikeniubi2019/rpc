@@ -12,6 +12,7 @@ import io.netty.channel.Channel;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -19,7 +20,6 @@ public class DoSendHandler implements InvocationHandler {
     private String serviceName;
     private String version;
     private AbstractContex contex;
-    private ThreadLocalRandom random =ThreadLocalRandom.current();
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
@@ -42,7 +42,7 @@ public class DoSendHandler implements InvocationHandler {
         Object result = null;
         IpChannelHolder ipChannelHolder = null;
         while (!responseHolder.isSuccess() && responseHolder.getTryCount()<3){
-            rpcRequest.setId(random.nextLong());
+            rpcRequest.setId(UUID.randomUUID().toString());
             //根据服务名称获取chennle列表
             ipChannelHolder = contex.getChannlesByServiceName(serviceName+version);
             //查找是否回退
@@ -62,12 +62,14 @@ public class DoSendHandler implements InvocationHandler {
             channel.writeAndFlush(rpcRequest);
             //管理接收对象
             responseHolder.setId(rpcRequest.getId());
-            ResponseHolderUtils.putHolder(responseHolder);
-
-            result = responseHolder.get();
-            ResponseHolderUtils.removeHolder(rpcRequest.getId());
-            responseHolder.setTryCount((byte)( responseHolder.getTryCount()+(byte)1));
-            responseHolder.setTimeOut(responseHolder.getTimeOut()+3000);
+            try {
+                ResponseHolderUtils.putHolder(responseHolder);
+                result = responseHolder.get();
+                responseHolder.setTryCount((byte)( responseHolder.getTryCount()+(byte)1));
+                responseHolder.setTimeOut(responseHolder.getTimeOut()+3000);
+            }finally {
+                ResponseHolderUtils.removeHolder(rpcRequest.getId());
+            }
         }
         if (!responseHolder.isSuccess()){
             if (ipChannelHolder!=null){

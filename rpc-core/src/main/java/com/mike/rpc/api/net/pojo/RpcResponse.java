@@ -3,17 +3,17 @@ package com.mike.rpc.api.net.pojo;
 import java.io.Serializable;
 
 public class RpcResponse implements Serializable {
-    private long id;
+    private String id;
     private boolean success;
     private Object result;
     private String message;
     private String version;
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
