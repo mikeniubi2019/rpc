@@ -25,15 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="537ba356-4ae5-45e7-b089-dc87ab41a423" name="Default Changelist" comment="Merge remote-tracking branch 'origin/master'">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-client/src/main/java/com/mike/rpc/client/core/serviceHandler/DoRecieveHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-client/src/main/java/com/mike/rpc/client/core/serviceHandler/DoRecieveHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-client/src/main/java/com/mike/rpc/client/net/holder/ResponseHolderUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-client/src/main/java/com/mike/rpc/client/net/holder/ResponseHolderUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-client/src/main/java/com/mike/rpc/client/reflect/handler/DoSendHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-client/src/main/java/com/mike/rpc/client/reflect/handler/DoSendHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/mike/rpc/api/net/pojo/RpcRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/mike/rpc/api/net/pojo/RpcRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/mike/rpc/api/net/pojo/RpcResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/mike/rpc/api/net/pojo/RpcResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-serve/src/main/java/com/mike/rpc/serve/core/channelHandler/InvokeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-serve/src/main/java/com/mike/rpc/serve/core/channelHandler/InvokeHandler.java" afterDir="false" />
-    </list>
+    <list default="true" id="537ba356-4ae5-45e7-b089-dc87ab41a423" name="Default Changelist" comment="修改request id 为uuid，优化request存根添加删除" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -197,7 +189,7 @@
       <workItem from="1591197128800" duration="14000" />
       <workItem from="1591283821341" duration="67000" />
       <workItem from="1591284000992" duration="1546000" />
-      <workItem from="1591336112641" duration="1248000" />
+      <workItem from="1591336112641" duration="2000000" />
     </task>
     <task id="LOCAL-00001" summary="服务端限流">
       <created>1591284510666</created>
@@ -234,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591285453173</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="修改request id 为uuid，优化request存根添加删除">
+      <created>1591337439196</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1591337439196</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +294,8 @@
     </ignored-roots>
     <MESSAGE value="服务端限流" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'" />
+    <MESSAGE value="修改request id 为uuid，优化request存根添加删除" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改request id 为uuid，优化request存根添加删除" />
   </component>
   <component name="WindowStateProjectService">
     <state x="651" y="274" key="#Notifications" timestamp="1590593116938">
@@ -394,10 +394,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="204" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1591285396657" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1591285486482">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1591337475406">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1591285486482" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1591337475406" />
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591285158749">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
